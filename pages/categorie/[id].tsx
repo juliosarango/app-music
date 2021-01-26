@@ -1,7 +1,7 @@
 import React, { useState,useEffect, useCallback } from "react"
 import { useRouter } from 'next/router'
 import Categorie from '@components/Categorie/Categorie'
-import { Container } from 'semantic-ui-react'
+import { Container, Header } from 'semantic-ui-react'
 
 const CategorieDetail = () => {
   const { query } = useRouter()
@@ -27,30 +27,33 @@ const CategorieDetail = () => {
       <h1>Cargando...</h1>
     )
   }
-     
+       
   return (  
     playlist.playlists.items.length > 0 &&   
-    <Container className='contenedor'>
-      {
-        playlist.playlists.items.map( item => (
-          <Categorie className='item' key={item.id} item={item} />
-        ))   
-      }
-      <style jsx global>{`
-          .contenedor {
-            display:flex !important;
-            flex-direction: row;
-            justify-content: space-around;
-            flex-wrap: wrap
-          }
-          .item {                                    
-            flex-grow: 4;   
-            align-self: auto;
-            order:5;
-            padding:10px;    
-          }
-      `}</style>
-    </Container>                
+    <>
+      <Header> Listas en {query.id} </Header>
+      <Container className='contenedor'>
+        {
+          playlist.playlists.items.map( item => (
+            <Categorie className='item' key={item.id} item={item} />
+          ))   
+        }
+        <style jsx global>{`
+            .contenedor {
+              display:flex !important;
+              flex-direction: row;
+              justify-content: space-around;
+              flex-wrap: wrap
+            }
+            .item {                                    
+              flex-grow: 4;   
+              align-self: auto;
+              order:5;
+              padding:10px;    
+            }
+        `}</style>
+      </Container>     
+    </>           
   )  
 
 

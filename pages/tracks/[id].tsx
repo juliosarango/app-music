@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Track from '@components/Track/Track'
-import { Container } from 'semantic-ui-react'
+import { Container, Header } from 'semantic-ui-react'
 const Tracks = () => {
 
   const { query } = useRouter()
@@ -31,6 +31,8 @@ const Tracks = () => {
 
   return (
     Object.entries(tracks)  && tracks.tracks.items.length > 0 &&  
+    <>
+      <Header> Canciones disponibles para reproducir </Header>
       <Container>
       {
         tracks.tracks.items.map ( (item) => (
@@ -38,6 +40,7 @@ const Tracks = () => {
         ))
       }
       </Container>          
+    </>
   )
 }
 
