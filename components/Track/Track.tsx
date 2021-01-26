@@ -3,7 +3,7 @@ import { Card, Image, Divider } from 'semantic-ui-react'
 
 
 
-const Track = ( { item } = props ) => {
+const Track = ( { item }:any ) => {
 
   return (   
   <>

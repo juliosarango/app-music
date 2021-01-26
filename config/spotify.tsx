@@ -35,7 +35,7 @@ export const getAllCategories = async() => {
   })
 }
 
-export const getCategorie = async(categorie) => {
+export const getCategorie = async(categorie:String) => {
   const { access_token } = await getAccessToken()
 
   return fetch(`${CATEGORIES_URL}/${categorie}/playlists`, {
@@ -45,7 +45,7 @@ export const getCategorie = async(categorie) => {
   })
 }
 
-export const getPlaylist = async(id) => {
+export const getPlaylist = async(id:String) => {
   const { access_token } = await getAccessToken()
 
   return fetch(`${PLAYLIST_URL}/${id}/tracks`, {
@@ -55,7 +55,7 @@ export const getPlaylist = async(id) => {
   })
 }
 
-export const getTracks = async(id) => {
+export const getTracks = async(id:String) => {
   const { access_token } = await getAccessToken()
 
   return fetch(`${PLAYLIST_URL}/${id}/tracks`, {

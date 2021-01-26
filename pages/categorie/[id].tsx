@@ -5,7 +5,7 @@ import { Container } from 'semantic-ui-react'
 
 const CategorieDetail = () => {
   const { query } = useRouter()
-  const [ playlist, setPlayList ] = useState([])
+  const [ playlist, setPlayList ] = useState<any[]>([])
   const [isLoading, setIsLoading] = useState(true)
   
   useEffect( () => {  
@@ -29,7 +29,7 @@ const CategorieDetail = () => {
   }
      
   return (  
-    Object.entries(playlist.playlists)  && playlist.playlists.items.length > 0 &&   
+    playlist.playlists.items.length > 0 &&   
     <Container className='contenedor'>
       {
         playlist.playlists.items.map( item => (

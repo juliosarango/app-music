@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-const CardCategories = ({categorie}) => {    
+const CardCategories = ({categorie}: any) => {    
   return (
     <Link key={categorie.id} href="/categorie/[id]" as={`/categorie/${categorie.id}`} passHref>
       <Card key={categorie.id}>      

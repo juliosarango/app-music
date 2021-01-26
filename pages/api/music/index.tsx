@@ -1,9 +1,9 @@
-import { IncomingMessage, ServerResponse } from 'http'
+import { NextApiRequest, NextApiResponse } from 'next'
 import { getAllCategories } from '@config/spotify'
 
 import enablePublicAccess from '@cors'
 
-export default async (_, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     const response = await getAllCategories()
     const { categories } = await response.json();    

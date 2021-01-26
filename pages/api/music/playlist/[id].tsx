@@ -1,13 +1,13 @@
-import { IncomingMessage, ServerResponse } from 'http'
-import { getPlayList } from '@config/spotify'
+import { NextApiRequest, NextApiResponse } from 'next'
+import { getPlaylist } from '@config/spotify'
 
 import enablePublicAccess from '@cors'
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
 
-    const id = req.query.id
+    const id: String = req.query.id as String
 
-    const response = await getPlayList(id)    
+    const response = await getPlaylist(id)    
     const playlists = await response.json();    
 
     return res.status(200).json({ playlists })          
