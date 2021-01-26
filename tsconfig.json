@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/"]      
+      "@components/*": ["components/*"],
+      "@config/*": ["config/*"],
+      "@cors": ["cors-middleware.ts"]
     },  
     "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
